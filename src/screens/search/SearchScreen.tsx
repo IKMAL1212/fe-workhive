@@ -29,21 +29,21 @@ const jobData: Job[] = [
     title: 'Graphic Designer',
     salary: 'IDR. 3.110.000/project',
     location: 'Pekanbaru',
-    image: require('../../../assets/logo/logo.png'),
+    image: require('../../../assets/search/gra.png'),
   },
   {
     id: '2',
     title: 'Video Designer',
     salary: 'IDR. 2.200.000/project',
     location: 'Jakarta',
-    image: require('../../../assets/logo/logo.png'),
+    image: require('../../../assets/search/vd.png'),
   },
   {
     id: '3',
     title: 'App Designer',
     salary: 'IDR. 8.000.000/project',
     location: 'Jakarta',
-    image: require('../../../assets/logo/logo.png'),
+    image: require('../../../assets/search/app.png'),
   },
 ];
 

@@ -15,63 +15,29 @@ import { Ionicons } from "@expo/vector-icons";
 import { NavigationProp, RouteProp } from "@react-navigation/native";
 
 type ChatDetailScreenProps = {
-  navigation: NavigationProp<any>;
-  route: RouteProp<{
-    ChatDetailScreen: undefined;
-  }, 'ChatDetailScreen'>;
+ navigation: NavigationProp<any>;
+ route: RouteProp<{
+   ChatDetailScreen: undefined;
+ }, 'ChatDetailScreen'>;
+};
+
+type Message = {
+ id: string;
+ name?: string; 
+ message: string;
+ profileImage?: any;
+ unread?: boolean;
 };
 
 const ChatDetailScreen = ({ navigation, route }: ChatDetailScreenProps) => {
-  const [inputMessage, setInputMessage] = useState("");
- const [messages, setMessages] = useState([
+ const [inputMessage, setInputMessage] = useState("");
+ const [messages, setMessages] = useState<Message[]>([
    {
      id: '1',
-     name: 'Ikhlas Abdillah Sinaga',
+     name: 'User',
      message: 'How Much?',
-     profileImage: require('../../../assets/logo/logo.png'),
-     unread: true,
-   },
-   {
-     id: '2',
-     name: 'Zaki Hutagulung',
-     message: 'yeaah bro!', 
-     profileImage: require('../../../assets/logo/logo.png'),
-     unread: true,
-   },
-   {
-     id: '3',
-     name: 'Ikmal Simbolon',
-     message: 'Cancel',
-     profileImage: require('../../../assets/logo/logo.png'),
-     unread: false,
-   },
-   {
-     id: '4',
-     name: 'Azizi Nababan',
-     message: 'Up',
-     profileImage: require('../../../assets/logo/logo.png'),
-     unread: false,
-   },
-   {
-     id: '5',
-     name: 'Raihan Situmorang', 
-     message: 'How iam make it?',
-     profileImage: require('../../../assets/logo/logo.png'),
-     unread: false,
-   },
-   {
-     id: '6',
-     name: 'Adrian Siregar',
-     message: 'You re so cool!',
-     profileImage: require('../../../assets/logo/logo.png'),
-     unread: false,
-   },
-   {
-     id: '7',
-     name: 'Inola Limbong',
-     message: 'I agree',
-     profileImage: require('../../../assets/logo/logo.png'),
-     unread: false,
+     profileImage: require('../../../assets/chat/1.png'),
+     unread: false
    },
  ]);
  const scrollViewRef = useRef<ScrollView>(null);
@@ -103,7 +69,7 @@ const ChatDetailScreen = ({ navigation, route }: ChatDetailScreenProps) => {
        </TouchableOpacity>
 
        <Image
-         source={require("../../../assets/logo/logo.png")}
+         source={require("../../../assets/chat/1.png")}
          style={styles.profileImage}
        />
        <Text style={styles.headerTitle}>Ikhlas Abdillah Sinaga</Text>
@@ -185,8 +151,8 @@ const styles = StyleSheet.create({
    backgroundColor: "#FFFFFF",
  },
  header: {
-   flexDirection: "row",  
-   alignItems: "center",
+   flexDirection: "row",
+   alignItems: "center", 
    paddingHorizontal: 16,
    paddingVertical: 10,
    borderBottomWidth: 1,
@@ -199,7 +165,7 @@ const styles = StyleSheet.create({
    flex: 1,
    fontSize: 18,
    fontWeight: "600",
-   textAlign: "center", 
+   textAlign: "center",
    color: "#333",
  },
  callButton: {
@@ -217,7 +183,7 @@ const styles = StyleSheet.create({
    width: 40,
    height: 40,
    borderRadius: 20,
-   marginRight: 8,  
+   marginRight: 8,
  },
  chatContainer: {
    flex: 1,
@@ -249,7 +215,7 @@ const styles = StyleSheet.create({
    backgroundColor: "#F2F2F7",
    borderRadius: 16,
    padding: 12,
-   maxWidth: "90%",  
+   maxWidth: "90%",
  },
  messageText: {
    fontSize: 16,

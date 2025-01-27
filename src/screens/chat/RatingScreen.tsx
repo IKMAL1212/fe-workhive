@@ -3,8 +3,8 @@ import { View, Image, Text, TouchableOpacity, TextInput, Keyboard, TouchableWith
 import { StackNavigationProp } from '@react-navigation/stack';
 import { StyleSheet } from 'react-native';
 
-const profileImage = require('../../../assets/logo/logo.png');
-const serviceImage = require('../../../assets/logo/logo.png');
+const profileImage = require('../../../assets/chat/1.png');
+const serviceImage = require('../../../assets/chat/1.png');
 
 type RatingScreenProps = {
   navigation: StackNavigationProp<any>;

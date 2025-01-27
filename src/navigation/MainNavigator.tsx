@@ -32,6 +32,8 @@ import PaymentTotalScreen from '../screens/payment/PaymentTotalScreen';
 import MyOrderScreen from '../screens/order/MyOrderScreen';
 import ChatScreen from '../screens/chat/ChatScreen';
 import ChatDetailScreen from '../screens/chat/ChatDetailScreen';
+import RatingScreen from '../screens/chat/RatingScreen';
+
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -99,7 +101,7 @@ export default function MainNavigator() {
           <Stack.Screen name="DiscoverChannelScreen" component={DiscoverChannelScreen} />
           <Stack.Screen name="ChatScreen" component={ChatScreen} />
           <Stack.Screen name="ChatDetailScreen" component={ChatDetailScreen} />
-
+          <Stack.Screen name="RatingScreen" component={RatingScreen} />
 
           <Stack.Screen name="Main" component={BottomNavigator} />
         </Stack.Navigator>

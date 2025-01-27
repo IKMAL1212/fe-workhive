@@ -29,7 +29,7 @@ const CategoryChannelScreen = ({ navigation }: Props) => {
      price: 1000000,
      rating: 5,
      likes: 30,
-     image: require("../../../assets/logo/logo.png"),
+     image: require("../../../assets/category/1.png"),
      author: "Alex Johnson"
    },
    {
@@ -38,7 +38,7 @@ const CategoryChannelScreen = ({ navigation }: Props) => {
     price: 1000000,
     rating: 5,
     likes: 30,
-    image: require("../../../assets/logo/logo.png"),
+    image: require("../../../assets/category/explor.png"),
     author: "Alex Johnson"
   },
   {
@@ -47,7 +47,7 @@ const CategoryChannelScreen = ({ navigation }: Props) => {
     price: 1000000,
     rating: 5,
     likes: 30,
-    image: require("../../../assets/logo/logo.png"),
+    image: require("../../../assets/category/nig.png"),
     author: "Alex Johnson"
   },
   {
@@ -56,7 +56,7 @@ const CategoryChannelScreen = ({ navigation }: Props) => {
     price: 1000000,
     rating: 5,
     likes: 30,
-    image: require("../../../assets/logo/logo.png"),
+    image: require("../../../assets/category/land.png"),
     author: "Alex Johnson"
   },
   {
@@ -65,7 +65,7 @@ const CategoryChannelScreen = ({ navigation }: Props) => {
     price: 1000000,
     rating: 5,
     likes: 30,
-    image: require("../../../assets/logo/logo.png"),
+    image: require("../../../assets/category/tra.png"),
     author: "Alex Johnson"
   },
   {
@@ -74,7 +74,16 @@ const CategoryChannelScreen = ({ navigation }: Props) => {
     price: 1000000,
     rating: 5,
     likes: 30,
-    image: require("../../../assets/logo/logo.png"),
+    image: require("../../../assets/category/art.png"),
+    author: "Alex Johnson"
+  },
+  {
+    id: 7,
+    title: "Coffee Shop Website Template",
+    price: 1000000,
+    rating: 5,
+    likes: 12,
+    image: require("../../../assets/category/coffe.png"),
     author: "Alex Johnson"
   },
  ];

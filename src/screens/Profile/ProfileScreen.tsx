@@ -73,19 +73,25 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
     }
   };
 
+  const statsData = [
+    { label: "Unpaid", value: "0" },
+    { label: "Processing", value: "1", highlight: true, onPress: () => navigation.navigate("MyOrderScreen") },
+    { label: "Completed", value: "0" },
+    { label: "Cancelled", value: "0" },
+    { label: "Failed", value: "0" },
+  ];
+
   return (
     <ScrollView
       style={styles.container}
       contentContainerStyle={styles.scrollContent}
       showsVerticalScrollIndicator={false}
     >
-      {/* Background Image Header */}
       <View style={styles.headerContainer}>
         <ImageBackground
           source={require("../../../assets/Profile/bg.png")}
           style={styles.backgroundImage}
         />
-        {/* Profile Section that overlaps the background */}
         <View style={styles.profileSection}>
           <View style={styles.profileImageContainer}>
             <Image
@@ -105,20 +111,28 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
         </View>
       </View>
 
-      {/* Stats Section */}
       <View style={styles.statsContainer}>
-        <TouchableOpacity style={styles.statItem}>
-          <Text style={styles.statNumber}>0</Text>
-          <Text style={styles.statLabel}>Not yet paid</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.statItem}>
-          <Text style={styles.statNumber}>1</Text>
-          <Text style={styles.statLabel}>Work Process</Text>
-        </TouchableOpacity>
+        {statsData.map((stat, index) => (
+          <TouchableOpacity
+            key={stat.label}
+            style={[
+              styles.statItem,
+              stat.highlight && styles.statItemHighlight,
+              index < statsData.length - 1 && styles.statItemBorder,
+            ]}
+            onPress={stat.onPress}
+          >
+            <Text style={[styles.statNumber, stat.highlight && styles.statNumberHighlight]}>
+              {stat.value}
+            </Text>
+            <Text style={[styles.statLabel, stat.highlight && styles.statLabelHighlight]}>
+              {stat.label}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
 
       <View style={styles.contentContainer}>
-        {/* My Workhive Settings */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>My Workhive Settings</Text>
           <SettingItem
@@ -156,7 +170,6 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Resources Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Resources</Text>
           <SettingItem icon="help" title="Support" />
@@ -164,7 +177,6 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
           <SettingItem icon="store" title="Become a Seller" />
         </View>
 
-        {/* More Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>More</Text>
           <SettingItem icon="info" title="About us" />
@@ -172,13 +184,11 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
           <SettingItem icon="description" title="Terms and conditions" />
         </View>
 
-        {/* Seller Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Seller</Text>
           <SettingItem icon="home" title="Home Page" />
         </View>
 
-        {/* Logout Section */}
         <View style={[styles.section, styles.logoutSection]}>
           <SettingItem
             icon="logout"
@@ -198,7 +208,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
   },
   scrollContent: {
-    paddingBottom: 120, // Increased padding to account for bottom navigator
+    paddingBottom: 120,
   },
   headerContainer: {
     height: HEADER_HEIGHT,
@@ -268,15 +278,30 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
+  statItemHighlight: {
+    backgroundColor: "#4B70E2",
+    borderRadius: 8,
+    paddingVertical: 4,
+  },
+  statItemBorder: {
+    borderRightWidth: 1,
+    borderRightColor: "#f0f0f0",
+  },
   statNumber: {
     fontSize: 20,
     fontWeight: "bold",
     color: "#333",
   },
+  statNumberHighlight: {
+    color: "#fff",
+  },
   statLabel: {
     fontSize: 14,
     color: "#666",
     marginTop: 4,
+  },
+  statLabelHighlight: {
+    color: "#fff",
   },
   contentContainer: {
     flex: 1,

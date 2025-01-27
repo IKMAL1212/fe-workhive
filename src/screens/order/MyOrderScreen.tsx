@@ -21,7 +21,16 @@ const MyOrderScreen = () => {
       price: 'IDR. 800.000',
       rating: 4,
       reviews: 4756,
-      image: require('../../../assets/logo/logo.png'),
+      image: require('../../../assets/category/10.png'),
+    },
+    {
+      id: 2,
+      title: 'Design App',
+      description: 'Special Promo cheapest website design, click here..',
+      price: 'IDR. 800.000',
+      rating: 4,
+      reviews: 4756,
+      image: require('../../../assets/category/11.png'),
     },
   ];
 
@@ -65,7 +74,7 @@ const MyOrderScreen = () => {
 
       <View style={styles.orderCard}>
         <Image 
-          source={require('../../../assets/logo/logo.png')}
+          source={require('../../../assets/category/1.png')}
           style={styles.orderImage}
         />
         <View style={styles.orderDetails}>

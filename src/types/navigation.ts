@@ -37,6 +37,7 @@ export type RootStackParamList = {
   DiscoverScreen: undefined;
   ChatScreen: undefined;
   ChatDetailScreen: undefined;
+  RatingScreen: undefined;
 };
 
 export type BottomTabParamList = {
